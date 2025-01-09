@@ -2546,6 +2546,7 @@ class Solution(collections.abc.Mapping):
           state["VectorWidthB"] = 1
       else:
         state["VectorWidthB"] = 1
+    # state["VectorWidthB"] = state["VectorWidthA"]
 
     if state["ProblemType"]["Sparse"] and not state["DirectToVgprSparseMetadata"]:
       state["VectorWidthMetadata"] = state["VectorWidthA"] if state["ProblemType"]["Sparse"] == 1 else state["VectorWidthB"]
@@ -2858,6 +2859,7 @@ class Solution(collections.abc.Mapping):
             if (state["MacroTile1"]*state["_DepthUB"]//state["NumThreads"]) % curGRVW == 0:
               state["GlobalReadVectorWidthB"] = int(curGRVW)
             curGRVW *= 2
+    # state["GlobalReadVectorWidthB"] = state["GlobalReadVectorWidthA"]
 
     # Force GRVW the same when UnrollLoopSwapGlobalReadOrder = 1.
     if genGRVWA and state["UnrollLoopSwapGlobalReadOrder"] == 1:

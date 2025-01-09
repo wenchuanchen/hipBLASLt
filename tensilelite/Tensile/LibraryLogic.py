@@ -1558,4 +1558,4 @@ def main(config, cxxCompiler: str):
   libraryLogicPath = os.path.join(globalParameters["WorkingPath"], \
       globalParameters["LibraryLogicPath"])
 
-  generateLogic(config, benchmarkDataPath, libraryLogicPath, cxxCompiler)
+  # generateLogic(config, benchmarkDataPath, libraryLogicPath, cxxCompiler)
